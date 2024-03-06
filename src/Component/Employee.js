@@ -24,19 +24,18 @@ export function Employee () {
     const navigate = useNavigate();
 
     const handleClick = (id) => {
-        console.log(id)
-        navigate('/detail/'+ id)
+        navigate('/detailemployees/'+ id)
     }
 
     return (
         <>
         {state && <h3>Thong tin tai khoan: {state.email} va {state.password}</h3>}
         <table>
-        {employees.map((employee, ind) => (
+        {employees.map((employee) => (
             <tr key={employee.id}>
                 <td>{employee.name}</td>
                 <td>{employee.age}</td>
-                <td><button onClick={() => handleClick(ind)}>detail</button></td>
+                <td><button onClick={() => handleClick(employee.id)}>detail</button></td>
             </tr>
 ))}
         </table>
